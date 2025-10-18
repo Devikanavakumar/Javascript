@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grocery Calculator</title>
+</head>
+<body>
+    <script type="text/javascript">
+       
+        let rice = "Rice";
+        let sugar = "Sugar";
+        let wheat = "Wheat";
+
+       
+        let price1 = 50;
+        let price2 = 40;
+        let price3 = 30;
+
+        
+        let q1 = 5;
+        let q2 = 4;
+        let q3 = 6;
+
+        
+        let ricePrice = price1 * q1;
+        let sugarPrice = price2 * q2;
+        let wheatPrice = price3 * q3;
+
+        console.log(rice + " = ₹" + ricePrice);
+        console.log(sugar + " = ₹" + sugarPrice);
+        console.log(wheat + " = ₹" + wheatPrice);
+
+        
+        let totalPrice = ricePrice + sugarPrice + wheatPrice;
+        console.log("Total price = ₹" + totalPrice);
+
+        q2 = 6;
+        sugarPrice = price2 * q2;
+
+      
+        totalPrice = ricePrice + sugarPrice + wheatPrice;
+        console.log("Updated " + sugar + " = ₹" + sugarPrice);
+        console.log("Updated total price = ₹" + totalPrice);
+    </script>
+</body>
+</html>
