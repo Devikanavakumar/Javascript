@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>TRIMMED: <span id="demo1"></span></p>
+    <p>LOWER CASE:<span id="demo2"></span></p>
+    <p>REPLACE:<span id="demo3"></span></p>
+    <p>SEARCH:<span id="demo4"></span></p>
+    <p>SPLIT:<span id="demo5"></span></p>
+<script lang="javscript" type="text/javascript">
+    function myfunction(){
+    var feedback="   I loved the FOOD and the service!  ";
+    var trimmed=feedback.trim();
+    document.getElementById("demo1").innerHTML=trimmed.trim();
+    document.getElementById("demo2").innerHTML=trimmed.toLowerCase();
+    document.getElementById("demo3").innerHTML=trimmed.replace("food","ambience");
+    document.getElementById("demo4").innerHTML=trimmed.search("service");
+    document.getElementById("demo5").innerHTML=trimmed.split(" ");
+    }
+    myfunction();
+</script>
+</body>
+</html>
