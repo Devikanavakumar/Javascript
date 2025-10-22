@@ -18,16 +18,12 @@
             var bio1 = profile.bio.trim().toLowerCase().replace("javascript", "JS");
             var length1 = bio1.length;
 
-            return {
-                username: username1,
-                bio: bio1,
-                bioLength: length1 
-            };
+            return { username1, bio1, length1 };
         }
 
 
-        var cleanedProfile = cleanUserBio(userProfile);
-        console.log(cleanedProfile);
+       console.log(cleanUserBio(userProfile));
+
     </script>
 </body>
 </html>
