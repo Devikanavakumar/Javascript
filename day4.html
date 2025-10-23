@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+   <script>
+   let randomNum = Math.floor(Math.random() * 100) + 1;
+   document.getElementById("demo").innerHTML = randomNum;
+   let userscore = "75";
+   let numericScore = Number(userscore);
+   console.log(numericScore);
+   let diff = randomNum - numericScore;
+   console.log( "difference:", diff);
+   console.log (Math.round(Math.sqrt(userscore)));
+   console.log(Math.PI);
+   let result_1 = "50" *2;
+   console.log( "50*2:",result_1);
+   console.log("This data type of the output is " + typeof(result_1));
+   </script>
+</body>
+</html>
