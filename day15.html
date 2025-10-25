@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <button onclick="checkAccess()">Check Access</button>
+
+  <script>
+
+    function checkAccess() {
+        let user = {
+            name: "Doe",
+            age: 18,
+            isAdmin: true
+    };
+      var message = "age" in user
+       console.log("age exists:", "age" in user);
+
+         var user1 =(user.age >= 18 && user.isAdmin ? "Access Granted" : "Access Denied")
+       
+
+      console.log(user1);
+      delete user.age;
+      console.log(user);
+    }
+  </script>
+</body>
+</html>

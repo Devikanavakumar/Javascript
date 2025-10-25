@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="zoro()" >click me</button>
+    <script>
+        function zoro(){
+            let order = {
+                itemName : "Laptop",
+                isDelivered : true,
+                daysSinceDelivery : 7
+            }
+            let returneligible = (order.isDelivered && order.daysSinceDelivery <= 7)?
+            "Return eligible":
+            "Return Period Experied";
+            console.log(returneligible);
+            console.log(" itemName exists:" , "itemName"  in order);
+            delete order.daysSinceDelivery; 
+            console.log(order);
+       
+
+
+        }
+    </script>
+    
+</body>
+</html>
