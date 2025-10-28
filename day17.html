@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+    <script>
+        let date = new Date(2025,6,31);
+        let year = date.getFullYear();
+        let month = date.toLocaleString("default", {month: "long"});
+        let day  = date.getDate();
+        let today = new Date()
+        let passedyear = today.getFullYear() - date.getFullYear();
+        let passyear = (passedyear>=1)
+        ? "It has been more than a year since that date."
+        : "It has been less than a year since that date.";
+        document.getElementById("demo").innerHTML= "Year: " + year;
+        document.getElementById("demo1").innerHTML= "Month: " + month;
+        document.getElementById("demo2").innerHTML= "Day: " + day;
+        document.getElementById("demo3").innerHTML= passyear;
+    </script>
+</body>
+</html>

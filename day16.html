@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Score Analysis</title>
+</head>
+<body>
+  <script>
+    
+    let students = [
+      { name: "Rahul", score: 35 },
+      { name: "Sneha", score: 75 },
+      { name: "Arjun", score: 65 },
+      { name: "Meera", score: 95 },
+      { name: "Dev", score: 35 },
+      { name: "Tanya", score: 80 }
+    ];
+
+  
+    document.write("<h3>All Student Names:</h3>");
+    students.forEach(s => document.write(s.name + "<br>"));
+
+   
+    let passed60 = students.filter(s => s.score > 60);
+    document.write("<h3>Students Scored > 60:</h3>");
+    passed60.forEach(s => document.write(s.name + "<br>"));
+
+   
+    let totalScore = students.reduce((sum, s) => sum + s.score, 0);
+    document.write("<h3>Total Score:</h3>");
+    document.write(totalScore + "<br>");
+
+  
+    
+    let allPassed = students.every(s => s.score > 35);
+    document.write("<h3>All Passed (>35):</h3>");
+    document.write(allPassed ? "Yes" : "No" + "<br>");
+
+
+    let hasTopper = students.some(s => s.score > 90);
+    document.write("<h3>At Least One Scored > 90:</h3>");
+    document.write(hasTopper ? "Yes" : "No" + "<br>");
+
+  
+    let sorted = [...students].sort((a, b) => b.score - a.score);
+    document.write("<h3>Students Sorted by Score (Descending):</h3>");
+    sorted.forEach(s => {
+      document.write(`Name: ${s.name}, Score: ${s.score}<br>`);
+    });
+  </script>
+</body>
+</html>

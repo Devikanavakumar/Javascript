@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>product listing</title>
+</head>
+<body>
+    <script>
+        let products=["apple","mango","grapes","orange"];
+        
+        let prices=[50,100,150,300];
+        
+        let productDetails=[].concat("Product: " + products[0] + " - Price: " + prices[0]+"<br>"+
+                                    "Product: " + products[1] + " - Price: " + prices[1] +"<br>"+
+                                    "Product: " + products[2] + " - Price: " + prices[2]+"<br>"+
+                                    "Product: " + products[3] + " - Price: " + prices[3]
+);
+    
+     document.write("<h3>All Products:</h3>");
+    for (let i = 0; i < productDetails.length; i++) {
+      document.write(productDetails[i] + "<br>");
+    }
+     document.write("<h3>Products with Price > 50:</h3>");
+   let filterIndex = [1, 2, 3];
+
+     products
+  .map((product, index) => ({ product, price: prices[index], index }))
+  .filter(item => filterIndex.includes(item.index))
+  .forEach(item => {
+    document.write("Product: " + item.product + " - Price: " + item.price + "<br>");
+  });
+
+     products.push("Watermelon");
+     prices.push(80);
+     let UpdatedProduct=[].concat("Product: " + products[0] + " - Price: " + prices[0]+"<br>"+
+                                 "Product: " + products[1] + " - Price: " + prices[1] +"<br>"+
+                                 "Product: " + products[2] + " - Price: " + prices[2]+"<br>"+
+                                 "Product: " + products[3] + " - Price: " + prices[3]+"<br>"+
+                                 "Product: " + products[4] + " - Price: " + prices[4]
+     );
+     document.write("<h3>Updated Product List:</h3>");
+     document.write(UpdatedProduct+"<br>");
+ </script>
+</body>
+</html>
