@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Grocery Calculator</title>
+</head>
+<body>
+  <script>
+    let count = 0;
+
+    while (count < 5) {
+      let code = prompt("Enter product code (1-3):");
+      let quantity = prompt("Enter quantity:");
+
+      code = Number(code);
+      quantity = Number(quantity);
+
+     
+      if (code < 1) {
+        console.log("Invalid code. Skipping...");
+        continue;
+      }
+      if (code > 3) {
+       console.log("Invalid code. Skipping...");
+        continue;
+      }
+
+      if (quantity < 1) {
+        console.log("Invalid quantity. Skipping...");
+        continue;
+      }
+
+      let name = "";
+      let price = 0;
+
+      switch (code) {
+        case 1:
+          name = "Apple";
+          price = 30;
+          break;
+        case 2:
+          name = "Banana";
+          price = 10;
+          break;
+        case 3:
+          name = "Mango";
+          price = 50;
+          break;
+      }
+
+      let total = price * quantity;
+      console.log(name + " x " + quantity + " = ₹" + total);
+
+      if (total > 100) {
+       console.log("High purchase");
+      } else {
+        console.log("Normal purchase");
+      }
+
+      count++;
+    }
+
+    console.log("All 5 purchases completed!");
+  </script>
+</body>
+</html>
