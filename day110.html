@@ -7,22 +7,25 @@
 </head>
 <body>
     <script>
-        const jsonString = '{"name":"Jeeva","email":"jeeva@gmail.com","message":"Thank you for your help!"}';
-
         const containsThank = (input) => /thank/i.test(input.message);
 
-        try {
-            const feedback = JSON.parse(jsonString); 
-            const result = containsThank(feedback);
+try {
+  const name = prompt("Enter your name:");
+  const email = prompt("Enter your email:");
+  const message = prompt("Enter your feedback message:");
 
-            if (result) {
-                console.log("Positive feedback received");
-            } else {
-                console.log("Feedback noted");
-            }
-        } catch (error) {
-            console.error("Invalid JSON format:", error.message);
-        }
+  const jsonString = JSON.stringify({ name, email, message });
+  const feedback = JSON.parse(jsonString);
+
+  const result = containsThank(feedback);
+  if (result) {
+    console.log("Positive feedback received");
+  } else {
+    console.log("Feedback noted");
+  }
+} catch (error) {
+  console.error("Invalid JSON format:", error.message);
+}
     </script>
 </body>
 </html>
