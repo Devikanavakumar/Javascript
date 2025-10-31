@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Checker</title>
+</head>
+<body>
+    <script>
+        const jsonString = '{"name":"Jeeva","email":"jeeva@gmail.com","message":"Thank you for your help!"}';
+
+        const containsThank = (input) => /thank/i.test(input.message);
+
+        try {
+            const feedback = JSON.parse(jsonString); 
+            const result = containsThank(feedback);
+
+            if (result) {
+                console.log("Positive feedback received");
+            } else {
+                console.log("Feedback noted");
+            }
+        } catch (error) {
+            console.error("Invalid JSON format:", error.message);
+        }
+    </script>
+</body>
+</html>
