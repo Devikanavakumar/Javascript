@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Text Display</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 20px;
+    }
+    #output {
+      color: rgb(220, 60, 16);
+      transition: color 0.3s ease;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <form id="textForm">
+    <input type="text" id="userInput" placeholder="Enter text">
+    <button type="submit">Submit</button>
+  </form>
+  <p id="output"></p>
+
+  <script>
+    const form = document.getElementById('textForm');
+    const input = document.getElementById('userInput');
+    const output = document.getElementById('output');
+
+    form.onsubmit = e => {
+      e.preventDefault();
+      output.textContent = input.value;
+    };
+
+    output.onmouseover = () => output.style.color = 'green';
+    output.onmouseout = () => output.style.color = 'blue';
+  </script>
+</body>
+</html>
