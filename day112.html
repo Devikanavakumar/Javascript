@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Simple Feedback Form</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <style>
+    #confirmation {
+      color: green;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+    #displayFeedback {
+      margin-top: 20px;
+      transition: color 0.3s ease;
+    }
+  </style>
+</head>
+<body>
+  <div class="container mt-5">
+    <form id="feedbackForm">
+      <input type="text" id="userName" placeholder="Your Name" class="form-control mb-2">
+      <textarea id="userFeedback" placeholder="Your Feedback" class="form-control mb-2"></textarea>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <div id="confirmation"></div>
+    <div id="displayFeedback"></div>
+  </div>
+
+  <script>
+    document.getElementById('feedbackForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('userName').value.trim();
+      const feedback = document.getElementById('userFeedback').value.trim();
+      const display = document.getElementById('displayFeedback');
+      const confirmation = document.getElementById('confirmation');
+
+      if (name && feedback) {
+        display.innerHTML = `<strong>${name}</strong>: ${feedback}`;
+        confirmation.textContent = "Thanks for your Feedback!";
+        setTimeout(() => confirmation.textContent = "", 3000);
+      }
+    });
+
+    const display = document.getElementById('displayFeedback');
+    display.addEventListener('mouseover', () => display.style.color = 'blue');
+    display.addEventListener('mouseout', () => display.style.color = 'black');
+  </script>
+</body>
+</html>
